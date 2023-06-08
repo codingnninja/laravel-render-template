@@ -140,12 +140,12 @@ If you forgot to copy them, you can go back to your dashboard and select your da
 | -------- | ------- |
 | DB_CONNECTION| pgsql |
 | Port     | 5432    |
-| Hostname | dg2kl...|
-| Database | urdbname|
-| Username | username|
-| Password | ********|
+| Hostname | your hostname|
+| Database | your dbname|
+| Username | your username|
+| Password | your password|
 
-The keys and values above should the be added to the `environment` variables on render.com.
+The keys and values above show how to add `environment` variables on render.com and the image below also gives some insight.
 
 ![Render enviroment section](https://res.cloudinary.com/nyscapp/image/upload/v1686211206/laravel_render_environment_variable_chirww.png)
 
