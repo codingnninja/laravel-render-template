@@ -138,6 +138,8 @@ If you forgot to copy them, you can go back to your dashboard and select your da
 
 |  Key     | Value   |
 | -------- | ------- |
+| DB_CONNECTION| pgsql |
+| Port     | 5432    |
 | Hostname | dg2kl...|
 | Database | urdbname|
 | Username | username|
