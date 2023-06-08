@@ -1,17 +1,16 @@
 # laravel-render-template
 
-Do you want to host your Laravel application for free and stress free? This is guide will take you step by step until your application is hosted on render.com. 
+Do you want to host your Laravel application for FREE and stress free? This guide will take you step by step until your application is hosted on render.com. 
 
 Now, let's get started.
 
 ## 1. Set up an account on render.com
 
-Now, you need to check out [render.com](https://render.com) and click on signup. It is preferable to signup with GitHub since you will be using GitHub in the hosting process.
+Now, you need to [click to sign up](https://dashboard.render.com/login) on Render. It is preferable to sign up with GitHub since you will be using GitHub in the hosting process.
 
 ## 2. Force Laravel to accept only https
 
-To force Laravel to allow https by default, make sure you App/Provider/AppServiceProvider.php looks like below:
-
+To force Laravel to allow https by default, make sure you `App/Provider/AppServiceProvider.php` contains the line and block of code below:
 
 ```
 use Illuminate\Routing\UrlGenerator;
@@ -34,6 +33,7 @@ Make sure your AppServiceProvider contains the code above.
 Here, you will use `Laravel-render-template`. So [click to create](https://github.com/codingnninja/laravel-render-template) a remote repo.
 
 ![Laravel render template](https://res.cloudinary.com/nyscapp/image/upload/v1686174427/create_laravel-render_template_hpcqts.png)
+
 You need to click on `use this template` and then `create a new repository`. Fill the form and you're done setting up your remote repo.
 
 ## 4. Link local repository to remote repository.
@@ -55,7 +55,7 @@ git branch -M main
 
 ![Github url](https://res.cloudinary.com/nyscapp/image/upload/v1686174426/laravel_render_repo_url_sztour.png)
 
-Yeah, it is time to use the url of the repository you created. Use it as a replacement for the path in the command below:
+Yeah, it is time to use the url of the repository you created and you can copy it like in the image above. Use it as a replacement for the `url` in the commands below:
 
 ```sh
 git remote add origin https://github.com/OWNER/REPOSITORY.git
@@ -63,18 +63,18 @@ git pull && git push -u origin main
 ```
 ### 4.2 Using an existing project with no remote repo.
 
-If you working on an existing project you want to host, you need the command below:
+If you're working on an existing project you want to host, you need the commands below:
 
 ```sh
 git remote add origin https://github.com/OWNER/REPOSITORY.git
 git branch -M main
 git pull && git push -u origin main
 ```
-You need to replace the url above with the one you copy from your remote repository.
+You need to replace the `url` above with the one you copied from your remote repository.
 
 4.3 Using an existing project that is already connected to a remote repo.
 
-To do this, you need to reset the remote url in your local repository by running the command below:
+To do this, you need to reset the remote `url` in your local repository by running the command below:
 
 ```sh
 git remote set-url origin https://github.com/OWNER/REPOSITORY.git
@@ -88,7 +88,7 @@ git pull && git push
 
 ## 6. Setting up Env config
 
-6. Setup a database (PostgreSQL & MySQL)
+## 6. Setup a database (PostgreSQL & MySQL)
 
 To use MySQL on render, you need to be a paid user so we're using PostgreSQL in this write up. [Create](https://dashboard.render.com/new/database) PostgreSQL database service on render.
 
