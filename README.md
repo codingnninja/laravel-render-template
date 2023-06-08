@@ -72,7 +72,7 @@ git pull && git push -u origin main
 ```
 You need to replace the `url` above with the one you copied from your remote repository.
 
-4.3 Using an existing project that is already connected to a remote repo.
+### 4.3 Using an existing project that is already connected to a remote repo.
 
 To do this, you need to reset the remote `url` in your local repository by running the command below:
 
