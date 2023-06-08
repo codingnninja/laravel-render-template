@@ -84,11 +84,34 @@ git commit -m "first commit"
 git pull && git push
 ```
 
-## Setting up host web service on render
+## 5. Setting up host web service on render
+[Click to create](https://dashboard.render.com/select-repo?type=web) a new web service on Render. Then you will be prompted on what to do next. You see Github and Gitlab logos, and `connect account` by the right-hand side of your screen.
 
-## 6. Setting up Env config
+Click `connect account` under the Github logo to link your Github account. Choose the repository you want to host after setting up the web service. The image below gives you an insight.
 
-## 6. Setup a database (PostgreSQL & MySQL)
+![]()
+## 6. Setting up Enviroment variables
+
+> Make sure your Laravel application is already working.
+
+Here, we will add `env` variables to the render web service you create the other time. Navigate to the `dashboard` and you will see all the services you have created just like in the image below:
+
+![]()
+
+Then, click on the web service you want to host on and navigate to `environment`. You should see a view that look like below:
+
+Now, add all the `environment` variables your application depends on one by one. Let's start with `APP_KEY`.
+
+### Generate application key.
+
+Run the code below in the root directory of your Laravel project and copy its output.
+
+```sh
+php artisan key:generate --show
+```
+
+Add `APP_KEY` as the key and the generated string as its value.
+## 7. Setup a database (PostgreSQL & MySQL)
 
 To use MySQL on render, you need to be a paid user so we're using PostgreSQL in this write up. [Create](https://dashboard.render.com/new/database) PostgreSQL database service on render.
 
@@ -98,8 +121,8 @@ Make sure you enter your preferred `name`, `database name`, `user name` and `reg
 
 Remenber, you can use an external MySQL or ProgreSQL services. You need to follow similar process to set it up.
 
-Note: Make sure the name of your database include something like `db` not to be confused differentiate services on your dashboard but that is up to you.
+Note: Make sure the name of your database include something like `db` to differentiate the services on your dashboard but that is up to you.
 
-7. Connecting database to your project.
+### Adding database environment variables.
 
 Explanation on the content of `Laravel-render-template`
