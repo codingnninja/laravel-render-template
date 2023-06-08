@@ -89,16 +89,18 @@ git pull && git push
 
 Click `connect account` under the Github logo to link your Github account. Choose the repository you want to host after setting up the web service. The image below gives you an insight.
 
-![]()
+![Render web service section](https://res.cloudinary.com/nyscapp/image/upload/v1686211207/render_create_webserive_w4lh78.png)
 ## 6. Setting up Enviroment variables
 
 > Make sure your Laravel application is already working.
 
-Here, we will add `env` variables to the render web service you create the other time. Navigate to the `dashboard` and you will see all the services you have created just like in the image below:
+Here, we will add `environment` variables to the render web service you created the other time. Navigate to the `dashboard` and you will see all the services you have created just like in the image below:
 
-![]()
+![Dashboard of a render account](https://res.cloudinary.com/nyscapp/image/upload/v1686211207/dashboard_seriveces_cclxzh.png)
 
 Then, click on the web service you want to host on and navigate to `environment`. You should see a view that look like below:
+
+![Render enviroment section](https://res.cloudinary.com/nyscapp/image/upload/v1686211206/laravel_render_environment_variable_chirww.png)
 
 Now, add all the `environment` variables your application depends on one by one. Let's start with `APP_KEY`.
 
@@ -124,5 +126,13 @@ Remenber, you can use an external MySQL or ProgreSQL services. You need to follo
 Note: Make sure the name of your database include something like `db` to differentiate the services on your dashboard but that is up to you.
 
 ### Adding database environment variables.
+
+When you finished setting up PostreSQL above, you should have copied `Hostname`, `Port`, `Database`, `Username`, `Password` because you need to add them to the `enviroment` as variables.
+
+![Dashboard of a render account](https://res.cloudinary.com/nyscapp/image/upload/v1686211207/dashboard_seriveces_cclxzh.png)
+
+If you forgot to copy them, you can go back to your dashboard and select your database to copy the information.
+
+![Database connection information](https://res.cloudinary.com/nyscapp/image/upload/v1686212167/database_render_info_hclqgy.png)
 
 Explanation on the content of `Laravel-render-template`
