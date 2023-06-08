@@ -147,6 +147,21 @@ The keys and values above should the be added to the `environment` variables on 
 
 ![Render enviroment section](https://res.cloudinary.com/nyscapp/image/upload/v1686211206/laravel_render_environment_variable_chirww.png)
 
+Now, your application should be working correctly. And don't forget, it is important to keep this your application repository private for security reasons.
+
+## Troubleshooting
+
+> 1. Always check the logs on the server.
+
+> 2. Sometimes, you might be running packages that need update which may affect the application to work properly. So, make it an habit to run `composer update` once in a while.
+
+> If your database can't connect despite adding all necessary details correct, then add code the into your laravel project.
+
+Navigate to configs/database.php
+
+
+
+
 ```sh
 'default' => env('DB_CONNECTION', 'pgsql')
 ```
