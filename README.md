@@ -135,4 +135,39 @@ If you forgot to copy them, you can go back to your dashboard and select your da
 
 ![Database connection information](https://res.cloudinary.com/nyscapp/image/upload/v1686212167/database_render_info_hclqgy.png)
 
-Explanation on the content of `Laravel-render-template`
+
+|  Key     | Value   |
+| -------- | ------- |
+| Hostname | dg2kl...|
+| Database | urdbname|
+| Username | username|
+| Password | ********|
+
+The keys and values above should the be added to the `environment` variables on render.com.
+
+![Render enviroment section](https://res.cloudinary.com/nyscapp/image/upload/v1686211206/laravel_render_environment_variable_chirww.png)
+
+```sh
+'default' => env('DB_CONNECTION', 'pgsql')
+```
+
+And
+
+```php
+'pgsql' => [
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', 'Hostname'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'dbname'),
+            'username' => env('DB_USERNAME', 'username'),
+            'password' => env('DB_PASSWORD', '********'),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ]
+```
+
+Explanation on the content of `Laravel-render-template`.
