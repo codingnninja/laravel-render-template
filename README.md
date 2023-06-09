@@ -12,13 +12,13 @@ Now, you need to [click to sign up](https://dashboard.render.com/login) on Rende
 
 To force Laravel to allow https by default, make sure you `App/Provider/AppServiceProvider.php` contains the line and block of code below:
 
-```
+```php
 use Illuminate\Routing\UrlGenerator;
 ```
 
 Then:
 
-```
+```php
 public function boot(UrlGenerator $url)
     {
         if (env('APP_ENV') == 'production') {
