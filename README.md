@@ -36,7 +36,7 @@ Here, you will use `Laravel-render-template`. So [click to create](https://githu
 
 You need to click on `use this template` and then `create a new repository`. Fill the form and you're done setting up your remote repo.
 
-## 4. Link local repository to remote repository.
+## 4. Link local and remote repository.
 
 It is time to merge the local and remote repo and push everything to the remote repo. In this case, you need to choose the option that fit your need.
 
@@ -151,24 +151,54 @@ The keys and values above show how to add `environment` variables on render.com 
 
 Now, your application should be working correctly. And don't forget, it is important to keep this your application repository private for security reasons.
 
+## Content of Laravel-render-template
+
+It contains the following files and folders:
+
+1. `Dockerfile` contains the information to setup our a serve environment. 
+2. `scripts/00-laravel-deploy.sh` contains all necessary information to install Laravel and its dependencies. Below is its content:
+
+```sh
+#!/usr/bin/env bash
+echo "Running composer"
+composer install --no-dev --working-dir=/var/www/html
+
+echo "Caching config..."
+php artisan config:cache
+
+echo "Caching routes..."
+php artisan route:cache
+
+echo "Running migrations..."
+php artisan migrate --force 
+```
+
+We add the above commands because they're the default to install Laravel and most of its dependencies. If you run a certain command after installing a package before it works on you machine, you also need to run the same here.
+
+For example, Laravel-cloudinary package requires it users to publish it to work their machine. So, if you use Laravel-cloudinary, you also need to the command for the serve too. Then, you can add the command below to the above commands:
+
+```sh
+echo "Publishing cloudinary provider..."
+php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
+```
+3. `conf/nginx-site.conf` contains your nginx (server) configuration.
+4. `.dockerignore contains` the files we don't want to ship with Docker.
+
 ## Troubleshooting
 
 > 1. Always check the logs on the server.
 
 > 2. Sometimes, you might be running packages that need update which may affect the application to work properly. So, make it an habit to run `composer update` once in a while.
 
-> If your database can't connect despite adding all necessary details correct, then add code the into your laravel project.
+> 3. If your database can't connect despite adding all necessary details correctly, then you can hardcode the database connection information into your laravel project.
 
-Navigate to configs/database.php
-
-
-
+Navigate to `config/database.php` to change your default dabase connection to pgsql.
 
 ```sh
 'default' => env('DB_CONNECTION', 'pgsql')
 ```
 
-And
+And add database connection details below:
 
 ```php
 'pgsql' => [
@@ -187,4 +217,5 @@ And
         ]
 ```
 
-Explanation on the content of `Laravel-render-template`.
+> 4. Click to visit [render docs for Laravel installation]()
+
