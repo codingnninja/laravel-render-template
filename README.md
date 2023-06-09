@@ -29,7 +29,7 @@ public function boot(UrlGenerator $url)
 
 ## 3. Create a remote repository with laravel-render-template.
 
-Here, you will use `Laravel-render-template`. So [click to create](https://github.com/codingnninja/laravel-render-template) a remote repo.
+Here, you will use `Laravel-render-template`. So [click to create](https://github.com/codingnninja/Laravel-render-templater-host) a remote repo.
 
 ![Laravel render template](https://res.cloudinary.com/nyscapp/image/upload/v1686174427/create_laravel-render_template_hpcqts.png)
 
