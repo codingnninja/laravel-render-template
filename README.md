@@ -6,7 +6,7 @@ Now, let's get started.
 
 ## 1. Set up an account on render.com
 
-Now, you need to [click to sign up](https://dashboard.render.com/login) on Render. It is preferable to sign up with GitHub since you will be using GitHub in the hosting process.
+You need to [click to sign up](https://dashboard.render.com/login) on Render. It is preferable to sign up with GitHub since you will be using GitHub in the hosting process.
 
 ## 2. Force Laravel to accept only https
 
@@ -26,7 +26,6 @@ public function boot(UrlGenerator $url)
         }
     }
 ```
-Make sure your AppServiceProvider contains the code above.
 
 ## 3. Create a remote repository with laravel-render-template.
 
@@ -42,7 +41,7 @@ It is time to merge the local and remote repo and push everything to the remote 
 
 ### 4.1 Using a new Laravel project.
 
-Do you remember the remote repository you created? Wait, I will tell you what to do with soon. 
+Do you still remember the remote repository you created? Well, you will know what to do about it soon. 
 
 Run the following commands line by line:
 
@@ -55,7 +54,7 @@ git branch -M main
 
 ![Github url](https://res.cloudinary.com/nyscapp/image/upload/v1686174426/laravel_render_repo_url_sztour.png)
 
-Yeah, it is time to use the url of the repository you created and you can copy it like in the image above. Use it as a replacement for the `url` in the commands below:
+Yeah, it is time to use the url of the repository you created and you can copy it like in the image above. Use it as a replacement for the `url` in the first command below:
 
 ```sh
 git remote add origin https://github.com/OWNER/REPOSITORY.git
@@ -98,7 +97,7 @@ Here, we will add `environment` variables to the render web service you created 
 
 ![Dashboard of a render account](https://res.cloudinary.com/nyscapp/image/upload/v1686211207/dashboard_seriveces_cclxzh.png)
 
-Then, click on the web service you want to host on and navigate to `environment`. You should see a view that look like below:
+Then, click on the web service you want to host on and navigate to `environment`. You should see a view that looks like below:
 
 ![Render enviroment section](https://res.cloudinary.com/nyscapp/image/upload/v1686211206/laravel_render_environment_variable_chirww.png)
 
@@ -149,7 +148,7 @@ The keys and values above show how to add `environment` variables on render.com 
 
 ![Render enviroment section](https://res.cloudinary.com/nyscapp/image/upload/v1686211206/laravel_render_environment_variable_chirww.png)
 
-Now, your application should be working correctly. And don't forget, it is important to keep this your application repository private for security reasons.
+Now, your application should be working correctly. And don't forget, it is important to keep this your application repository private for security and other reasons.
 
 ## Content of Laravel-render-template
 
@@ -173,17 +172,17 @@ echo "Running migrations..."
 php artisan migrate --force 
 ```
 
-We add the above commands because they're the default to install Laravel and most of its dependencies. If you run a certain command after installing a package before it works on you machine, you also need to run the same here.
+We add the above commands because they're the default to install Laravel, dependencies, and run its operations. If you run a certain command after installing a package before it works on your machine, you also need to run the same here.
 
-For example, Laravel-cloudinary package requires it users to publish it to work their machine. So, if you use Laravel-cloudinary, you also need to the command for the serve too. Then, you can add the command below to the above commands:
+For example, Laravel-cloudinary package requires it users to publish it to work on their machine. So, if you use Laravel-cloudinary, you also need the command for the serve too. Then, you need to add the command below to the above commands:
 
 ```sh
 echo "Publishing cloudinary provider..."
 php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
 ```
-3. `conf/nginx-site.conf` contains your nginx (server) configuration.
-4. `.dockerignore contains` the files we don't want to ship with Docker.
 
+3. `conf/nginx-site.conf` contains nginx (server) configuration.
+4. `.dockerignore` contains contains the files you don't want to ship with Docker.
 ## Troubleshooting
 
 > 1. Always check the logs on the server.
@@ -192,7 +191,7 @@ php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\Cloudina
 
 > 3. If your database can't connect despite adding all necessary details correctly, then you can hardcode the database connection information into your laravel project.
 
-Navigate to `config/database.php` to change your default dabase connection to pgsql.
+Navigate to `config/database.php` to change your default database connection to pgsql.
 
 ```sh
 'default' => env('DB_CONNECTION', 'pgsql')
@@ -217,5 +216,5 @@ And add database connection details below:
         ]
 ```
 
-> 4. Click to visit [render docs for Laravel installation]()
+> 4. Click to visit [render docs for Laravel]()
 
