@@ -27,7 +27,7 @@ Here, you will use `Laravel-render-template`. So [click to create](https://githu
 
 ![Laravel render template](https://res.cloudinary.com/nyscapp/image/upload/v1686174427/create_laravel-render_template_hpcqts.png)
 
-You need to click on `use this template` and then `create a new repository`. You need to add the name of your repository and you're done.
+You need to click on `use this template` and then `create a new repository`. Fill your repository name and you're done.
 
 ## 4. Link local and remote repository.
 
